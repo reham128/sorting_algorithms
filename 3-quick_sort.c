@@ -1,8 +1,6 @@
 #include "sort.h"
 /**
  * swap_int - to swap to integer values
- * @array: array to be printed
- * @size: the array length
  * @x: first int to swap
  * @y: second int to swap with
  * Return: void function return nothing
