@@ -16,6 +16,7 @@ void swap_int(int *x, int *y)
 /**
  * Lomuto_part - function to partition the desired array
  * @array: the input array we want to partition it
+ * @size: the array size
  * @start: int low bondery
  * @end: int high boundary
  * Return: pivot index
