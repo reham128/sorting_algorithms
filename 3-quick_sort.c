@@ -27,19 +27,26 @@ int Lomuto_part(int *array, size_t size, int start, int end)
 	int pv_value, i, j;
 
 	pv_value = array[end];
-	i = start;
+	i = start - 1;
 
 	for (j = start; j < end; j++)
 	{
-		if (array[j] <= pv_value)
+		if (array[j] < pv_value)
 		{
-			swap_int(&array[i], &array[j]);
 			i++;
+			if (i != j)
+			{
+				swap_int(&array[i], &array[j]);
+				print_array(array, size);
+			}
 		}
 	}
-	swap_int(&array[i], &array[end]);
-	print_array(array, size);
-	return (i);
+	if (array[end] < array[i + 1])
+	{
+		swap_int(&array[i + 1], &array[end]);
+		print_array(array, size);
+	}
+	return (i + 1);
 }
 /**
  * quick_recursion - to apply the recursive divide partion an the array
