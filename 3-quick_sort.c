@@ -7,14 +7,13 @@
  * @y: second int to swap with
  * Return: void function return nothing
  */
-void swap_int(int *array, size_t size, int *x, int *y)
+void swap_int(int *x, int *y)
 {
 	int temp;
 
 	temp = *x;
 	*x = *y;
 	*y = temp;
-	print_array((const int *)array, size);
 }
 /**
  * Lomuto_part - function to partition the desired array
@@ -34,11 +33,12 @@ int Lomuto_part(int *array, size_t size, int start, int end)
 	{
 		if (array[j] <= pv_value)
 		{
-			swap_int(array, size, &array[i], &array[j]);
+			swap_int(&array[i], &array[j]);
 			i++;
 		}
 	}
-	swap_int(array, size, &array[i], &array[end]);
+	swap_int(&array[i], &array[end]);
+	print_array(array, size);
 	return (i);
 }
 /**
