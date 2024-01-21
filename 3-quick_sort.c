@@ -10,7 +10,7 @@
 void swap_int(int *array, size_t size, int *x, int *y)
 {
 	int temp;
-       
+
 	temp = *x;
 	*x = *y;
 	*y = temp;
