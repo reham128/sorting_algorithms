@@ -5,7 +5,7 @@
 void merge_arrays(int *array, size_t lb,size_t m, size_t ub, int * cpy)
 {
 	size_t i = lb;
-	size_t j = m + 1;
+	size_t j = m;
 	size_t k;
 
 	printf("Merging...\n");
@@ -13,43 +13,18 @@ void merge_arrays(int *array, size_t lb,size_t m, size_t ub, int * cpy)
 	print_array(array + lb, m - lb);
 	printf("[right]: ");
 	print_array(array + m, ub - m);
-	k = lb;
-	while (i <= m && j <= ub)
+	for (k = lb; k < ub; k++)
 	{
-		if (array[i] <= array[j])
+		if (i < m && (j >= ub || array[i] <= array[j]))
 		{
 			cpy[k] = array[i];
 			i++;
-			k++;
 		}
 		else
 		{
 			cpy[k] = array[j];
 			j++;
-			k++;
 		}
-	}
-	if (i < m)
-	{
-		while (j <= ub)
-		{
-			cpy[k] = array[j];
-			j++;
-			k++;
-		}
-	}
-	else
-	{
-		while (i <= m)
-		{
-			cpy[k] = array[i];
-			i++;
-			k++;
-		}
-	}
-	for (k = lb; k <= ub; k++)
-	{
-		array[k] = cpy[k];
 	}
 	printf("[Done]: ");
 	print_array(cpy, ub - lb);

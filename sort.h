@@ -2,7 +2,6 @@
 #define SORT_H
 #include <stdlib.h>
 #include <stdio.h>
-
 /**
  * struct listint_s - Doubly linked list node
  *
@@ -25,7 +24,5 @@ void quick_sort(int *array, size_t size);
 void quick_recursion(int *array, size_t size, int start, int end);
 int Lomuto_part(int *array, size_t size, int start, int end);
 void swap_int(int *x, int *y);
-void merge_recursion(int *array, size_t lb, size_t ub, int *cpy);
-void merge_arrays(int *array, size_t lb, size_t m, size_t ub, int * cpy);
 void merge_sort(int *array, size_t size);
 #endif
